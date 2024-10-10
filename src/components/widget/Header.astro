@@ -1,0 +1,86 @@
+---
+import { IconWrapper } from "../icon/icon-wrapper";
+import { Button } from "../ui/button";
+
+interface Link {
+  text?: string;
+  href?: string;
+}
+
+export interface Props {
+  links?: Array<Link>;
+  actions?: {
+    login?: Link;
+    signup?: Link;
+  };
+}
+
+const { links = [], actions } = Astro.props;
+---
+
+<header
+  class="top-0 flex z-40 border-b sticky backdrop-blur-2xl bg-background/30"
+>
+  <div
+    class="max-w-7xl w-full mx-auto px-6 py-4 flex justify-between items-center gap-x-16"
+  >
+    <div class="flex flex-col flex-none">
+      <span class="text-xs font-medium text-primary">Surtifruver</span>
+      <div class="flex items-center gap-x-1 pl-6 text-[#EC1F25]">
+        <IconWrapper className="transform scale-x-[-1]" icon="buyCar" strokeWidth="bold"/>
+        <span class="text-sm font-bold">El mono</span>
+      </div>
+    </div>
+    <div class="w-full hidden lg:flex justify-between items-center">
+      <ul class="flex gap-x-12">
+        {
+          links.map(({ text, href }) => (
+            <li>
+              <a
+                class="font-medium text-muted-foreground cursor-pointer"
+                href={href}
+              >
+                {text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+      <div>
+        <div class="flex items-center justify-center gap-x-2">
+          <Button size="icon">
+            <IconWrapper icon="buyCar" size="lg" strokeWidth="regular" />
+          </Button>
+        </div>
+      </div>
+    </div>
+    <div class="lg:hidden flex justify-end gap-x-10 items-center w-full">
+      <!-- <MobileNavButton client:load> -->
+      <div class="flex items-center justify-center h-full">
+        <ul class="text-lg text-black dark:text-white text-center">
+          {
+            links.map(({ text, href }) => (
+              <li class="py-2">
+                <a
+                  class="hover:underline font-medium cursor-pointer"
+                  href={href}
+                >
+                  {text}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-y-2 w-full px-6">
+        <Button
+          size="icon"
+          className="py-2.5 px-5 text-primary border rounded-md border-primary font-medium cursor-pointer text-center"
+        >
+          <IconWrapper icon="buyCar" />
+        </Button>
+      </div>
+    </div>
+  </div>
+</header>
