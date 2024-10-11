@@ -1,15 +1,21 @@
 ---
+import {CarouselDemo} from "@/components/widget/HeroCarusel.tsx";
+import Category from "@/components/widget/Category.astro";
+import WidgetWrapper from "@/components/WidgetWrapper.astro";
 import PageLayout from "@/layouts/PageLayout.astro";
 ---
 
 <PageLayout title="Surtifruver el Mono">
   <div
     class="absolute w-full h-full -top-1/4 bg-primary blur-3xl"
-  >
-  </div>
+  />
   <div
-    class="absolute left-0 top-0 bg-background/80 w-full h-full"
-  >
-  </div>
-  </div>
+    class="absolute left-0 top-0 bg-background/95 w-full h-full"
+  />
+  <WidgetWrapper>
+    <CarouselDemo client:load/>
+  </WidgetWrapper>
+  <WidgetWrapper>
+    <Category/>
+  </WidgetWrapper>
 </PageLayout>

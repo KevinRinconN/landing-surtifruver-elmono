@@ -1,0 +1,13 @@
+---
+const categories = [{ title: "VERDURAS", img: ""},{ title: "CEREALES Y GRANOS", img: ""},{ title: "FRUTAS", img: ""}];
+---
+
+<div class="flex flex-col space-y-2">
+  <h2 class="text-5xl font-bold">Lo mejor para ti</h2>
+  <p class="text-xl text-muted-foreground">
+    Encuentra todo lo que necesitas en Surtifruver El Mono
+  </p>
+</div>
+<div>
+    {categories.map((category)=> (<div></div>))}
+</div>
