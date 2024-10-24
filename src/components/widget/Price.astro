@@ -1,0 +1,16 @@
+---
+import { PriceCarusel } from "./price-carusel";
+---
+
+<div class="flex flex-col space-y-20">
+  <div class="flex flex-col space-y-2 text-center">
+    <span class="font-bold text-xl text-muted-foreground">PRECIOS</span>
+    <h2 class="text-5xl font-bold">Precios Justos y Competitivos</h2>
+    <p class="text-xl text-muted-foreground">
+      Disfruta de frutas y verduras de alta calidad sin afectar tu bolsillo.
+    </p>
+  </div>
+  <div>
+    <PriceCarusel client:load />
+  </div>
+</div>

@@ -1,0 +1,112 @@
+---
+interface Link {
+  text: string;
+  href?: string;
+}
+
+
+const navigation = {
+  title: "Enlaces Rápidos",
+  links: [
+    {
+      text: "Inicio",
+      href: "/",
+    },
+    {
+      text: "Servicios",
+    },
+    {
+      text: "Precios",
+    },
+    {
+      text: "Contacto",
+    },
+  ],
+};
+
+
+const services = {
+  title: "Servicios",
+  links: [
+    {
+      text: "Domicilios",
+      href: "/",
+    },
+    
+  ],
+};
+
+const legal = {
+  title: "Legal",
+  links: [
+    {
+      text: "Politicas de privacidad",
+    },
+    {
+      text: "Términos y condiciones",
+      href: "/"
+    },
+  ],
+};
+
+---
+
+<footer class="bg-primary/10 px-6">
+  <div class="border-b-2 py-20">
+    <div
+      class="max-w-6xl mx-auto flex flex-col gap-y-10 lg:gap-y-0 lg:flex-row lg:items-center justify-between"
+    >
+      <div class="flex flex-col max-w-xs space-y-4">
+        <div>
+          <div class="flex w-36 flex-none">
+            <img src="/assets/img/logo.png" alt="" />
+          </div>
+          <p class="text-xl font-bold text-primary mt-2">Surtifruver el mono</p>
+        </div>
+        <span class="text-muted-foreground">Los mejores precios en frutas y verduras</span>
+      </div>
+      <div
+        class="flex flex-col gap-y-10 md:gap-y-0 md:flex-row md:gap-x-32 text-muted-foreground"
+      >
+        <div class="flex flex-col space-y-4">
+          <h3 class="text-xl font-bold">
+            {navigation?.title && navigation.title}
+          </h3>
+          <div class="flex flex-col">
+            {
+              navigation?.links &&
+                navigation?.links.map((link) => (
+                  <a href={link.href}>{link.text}</a>
+                ))
+            }
+          </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+          <h3 class="text-xl font-bold">{services?.title}</h3>
+          <div class="flex flex-col">
+            {
+              services?.links &&
+                services?.links.map((link) => (
+                  <a href={link.href}>{link.text}</a>
+                ))
+            }
+          </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+          <h3 class="text-xl font-bold">{legal?.title}</h3>
+          <div class="flex flex-col">
+            {
+              legal?.links &&
+                legal?.links.map((link) => <a href={link.href}>{link.text}</a>)
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex items-center justify-center py-10">
+    <p class="text-xl font-bold text-muted-foreground">
+        © 2024 Surtifruver el mono. Todos los derechos reservados.
+    </p>
+  </div>
+</footer>

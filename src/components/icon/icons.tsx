@@ -13,6 +13,7 @@ import {
   ChartColumnIncreasing,
   Globe,
   ShoppingCart,
+  MessageSquareShare,
 } from "lucide-react";
 
 export type Icon = typeof LucideIcon;
@@ -29,7 +30,6 @@ const adminPages = {};
 
 const social = {};
 
-
 const uiIndicators = {
   buyCar: ShoppingCart,
   shiledCheck: ShieldCheck,
@@ -44,6 +44,7 @@ const uiIndicators = {
   chevronRight: ChevronRight,
   chevronDown: ChevronDown,
   chevronUp: ChevronUp,
+  message: MessageSquareShare,
 };
 
 export const Icons = {
