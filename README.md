@@ -1,54 +1,37 @@
-# Astro Starter Kit: Basics
+# Desarrollo de Plataforma Web para Surtifruver El Mono
 
-```sh
-npm create astro@latest -- --template basics
-```
+## Descripción
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+Surtifruver El Mono es una tienda de víveres que busca expandir su presencia en el entorno digital mediante el desarrollo de una plataforma web. Este proyecto tiene como objetivo permitir a los clientes consultar el inventario de productos en tiempo real, agregar productos a un carrito de compras y, finalmente, enviar el pedido al chat de WhatsApp para su procesamiento.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Tecnologías Utilizadas
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Frontend:**
+  - [Astro](https://astro.build/): Framework moderno utilizado para construir sitios web rápidos y optimizados, minimizando el uso de JavaScript en el cliente.
+  - **React**: Para la creación de componentes interactivos como el carrito de compras y el listado de productos.
+  - **Tailwind CSS**: Framework de estilos que facilita la creación de interfaces modernas y responsivas.
 
-## 🚀 Project Structure
+- **Backend:**
+  - [Strapi](https://strapi.io/): Headless CMS utilizado para gestionar el inventario de productos y exponer una API que se conecta con el frontend.
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Diseño:**
+  - [Figma](https://www.figma.com/): Herramienta utilizada para el diseño de la interfaz de usuario (UI) y la experiencia de usuario (UX), asegurando una navegación fluida y una experiencia optimizada en dispositivos móviles.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Características
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+- **Visualización de inventario en tiempo real**: Los clientes pueden consultar la disponibilidad de productos en la tienda en línea de forma actualizada.
+- **Carrito de compras**: Los usuarios pueden seleccionar productos y agregarlos a su carrito de compras.
+- **Envío de pedidos a WhatsApp**: En lugar de procesar los pedidos en línea, los clientes envían su pedido al chat de WhatsApp, donde se gestionan los pedidos finales.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Requisitos Previos
 
-Any static assets, like images, can be placed in the `public/` directory.
+- **Node.js** v14.x o superior
+- **Yarn** o **npm** como gestor de paquetes
+- **Strapi** instalado y configurado
 
-## 🧞 Commands
+## Instalación
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/tuusuario/surtifruver-el-mono.git
+   cd surtifruver-el-mono
