@@ -1,4 +1,5 @@
 ---
+import { CartSheet } from "../cart-sheet.tsx";
 import { IconWrapper } from "../icon/icon-wrapper";
 import { Button } from "../ui/button";
 
@@ -27,7 +28,11 @@ const { links = [], actions } = Astro.props;
     <div class="flex flex-col flex-none">
       <span class="text-xs font-medium text-primary">Surtifruver</span>
       <div class="flex items-center gap-x-1 pl-6 text-[#EC1F25]">
-        <IconWrapper className="transform scale-x-[-1]" icon="buyCar" strokeWidth="bold"/>
+        <IconWrapper
+          className="transform scale-x-[-1]"
+          icon="buyCar"
+          strokeWidth="bold"
+        />
         <span class="text-sm font-bold">El mono</span>
       </div>
     </div>
@@ -48,9 +53,7 @@ const { links = [], actions } = Astro.props;
       </ul>
       <div>
         <div class="flex items-center justify-center gap-x-2">
-          <Button size="icon">
-            <IconWrapper icon="buyCar" size="lg" strokeWidth="regular" />
-          </Button>
+          <CartSheet client:load />
         </div>
       </div>
     </div>
@@ -72,15 +75,10 @@ const { links = [], actions } = Astro.props;
           }
         </ul>
       </div>
-
+<!--       
       <div class="flex flex-col gap-y-2 w-full px-6">
-        <Button
-          size="icon"
-          className="py-2.5 px-5 text-primary border rounded-md border-primary font-medium cursor-pointer text-center"
-        >
-          <IconWrapper icon="buyCar" />
-        </Button>
-      </div>
+        <CartSheet client:load />
+      </div> -->
     </div>
   </div>
 </header>

@@ -1,24 +1,23 @@
 ---
+import { getCategoriesWithImgInfo } from "@/lib/get-categoys-info";
 import { cn } from "@/lib/utils";
 
-const categories = [
-  {
-    title: "VERDURAS",
-    img: "/assets/img/tomato.png",
-    color: "bg-[#d4e8ce] text-[#1c3b00]",
-  },
-  {
-    title: "CEREALES Y GRANOS",
-    img: "/assets/img/assortment.webp",
-    color: "bg-[#f5eab3] text-[#957c00]",
-  },
-  {
-    title: "FRUTAS",
-    img: "/assets/img/strawberries.png",
-    color: "bg-[#ffa6a6] text-[#ab5a5a]",
-  },
-];
+const colors = {
+  Amarillo: "bg-[#f5eab3] text-[#957c00]",
+  Rojo: "bg-[#ffa6a6] text-[#ab5a5a]",
+  Verde: "bg-[#d4e8ce] text-[#1c3b00]",
+};
+
+const categories: {
+  name: string;
+  color: keyof typeof colors;
+  img: string;
+  slug: string;
+}[] = await getCategoriesWithImgInfo();
+
+
 ---
+
 <div class="flex flex-col space-y-2">
   <h2 class="text-5xl font-bold">Lo mejor para ti</h2>
   <p class="text-xl text-muted-foreground">
@@ -27,15 +26,21 @@ const categories = [
 </div>
 <div class="mt-10 grid grid-cols-3 gap-x-8">
   {
-    categories.map(({ img, color, title }) => (
-      <div
-        class={cn("relative rounded-lg px-8 py-10 overflow-hidden h-60", color)}
-      >
-        <h2 class="font-bold text-4xl">{title}</h2>
-        <div class="absolute top-24 left-40 w-72 h-48">
-          <img class="" src={img} alt="" />
-        </div>
-      </div>
-    ))
+    categories &&
+      categories.map(({ name, color, img, slug }) => (
+        <a href={`/products?category=${slug}`}>
+          <div
+            class={cn(
+              "relative rounded-lg px-8 py-10 overflow-hidden h-60",
+              colors[color]
+            )}
+          >
+            <h2 class="font-bold text-4xl">{name}</h2>
+            <div class="absolute top-24 left-40 w-72 h-48">
+              <img class="" src={img} alt="" />
+            </div>
+          </div>
+        </a>
+      ))
   }
 </div>

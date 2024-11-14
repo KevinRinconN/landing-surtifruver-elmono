@@ -9,19 +9,19 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export function PriceCarusel() {
-  const imgs = [
-    "/assets/img/poster1.png",
-    "/assets/img/poster2.png",
-    "/assets/img/poster3.png",
-    "/assets/img/poster4.png",
-    "/assets/img/poster5.png",
-  ];
 
+
+const colors = {
+  Amarillo: "bg-[#f5eab3] text-[#957c00]",
+  Rojo: "bg-[#ffa6a6] text-[#ab5a5a]",
+  Verde : "bg-[#d4e8ce] text-[#1c3b00]"
+};
+
+export function PriceCarusel({imgs}: {imgs?: string[]}) {
   return (
     <Carousel className="w-full">
       <CarouselContent>
-        {imgs.map((img, index) => (
+        {imgs && imgs.map((img, index) => (
           <CarouselItem className="basis-1/3" key={index}>
             <div className="p-1">
               <div className="bg-muted rounded-md h-96">

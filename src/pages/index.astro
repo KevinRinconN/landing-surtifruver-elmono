@@ -6,6 +6,12 @@ import PageLayout from "@/layouts/PageLayout.astro";
 import Price from "@/components/widget/Price.astro";
 import AddressDetails from "@/components/widget/AddressDetails.astro";
 import Contact from "@/components/widget/Contact.astro";
+import { getHomeInfo } from "@/lib/get-home-info";
+import { PriceCarusel } from "@/components/widget/price-carusel";
+
+
+const data = await getHomeInfo();
+console.log(data);
 ---
 
 <PageLayout title="Surtifruver el Mono">
@@ -13,13 +19,15 @@ import Contact from "@/components/widget/Contact.astro";
   <div class="absolute left-0 top-0 bg-background/95 w-full h-full"></div>
   <div class="flex flex-col ">
     <WidgetWrapper >
-      <CarouselDemo client:load />
+      <CarouselDemo imgs={data.bannerImgs} client:load />
     </WidgetWrapper>
     <WidgetWrapper class="mt-0">
       <Category />
     </WidgetWrapper>
     <WidgetWrapper>
-      <Price />
+      <Price >
+        <PriceCarusel imgs={data.priceImgs} client:load />
+      </Price>
     </WidgetWrapper>
     <div class="grid bg-muted">
       <WidgetWrapper>

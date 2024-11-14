@@ -1,0 +1,14 @@
+---
+import { ProductList } from "@/components/widget/product-list";
+import WidgetWrapper from "@/components/WidgetWrapper.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import { getCategoriesInfo } from "@/lib/get-categoys-info";
+
+const categories = await getCategoriesInfo();
+---
+
+<PageLayout title="Surtifruver el Mono">
+  <WidgetWrapper>
+    <ProductList categories={categories} client:load/>
+  </WidgetWrapper>  
+</PageLayout>

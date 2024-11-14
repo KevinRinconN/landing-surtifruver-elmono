@@ -14,6 +14,11 @@ import {
   Globe,
   ShoppingCart,
   MessageSquareShare,
+  Wheat,
+  Apple,
+  Bean,
+  Archive,
+  MessageCircleHeart,
 } from "lucide-react";
 
 export type Icon = typeof LucideIcon;
@@ -23,12 +28,21 @@ export type IconSettings = keyof typeof settings;
 export type IconSocial = keyof typeof social;
 export type IconUiIndicator = keyof typeof uiIndicators;
 export type Icons = keyof typeof Icons;
+export type IconUi = keyof typeof ui;
 
 const settings = {};
 
 const adminPages = {};
 
 const social = {};
+
+const ui = {
+  wheat: Wheat,
+  apple: Apple,
+  bean: Bean,
+  archive: Archive,
+  message: MessageCircleHeart
+}
 
 const uiIndicators = {
   buyCar: ShoppingCart,
@@ -50,6 +64,7 @@ const uiIndicators = {
 export const Icons = {
   ...uiIndicators,
   ...social,
+  ...ui,
   ...adminPages,
   ...settings,
 };

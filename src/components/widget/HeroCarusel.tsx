@@ -9,19 +9,12 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export function CarouselDemo() {
-  const imgs = [
-    "/assets/img/hero1.png",
-    "/assets/img/hero2.png",
-    "/assets/img/poster3.png",
-    "/assets/img/poster4.png",
-    "/assets/img/poster5.png",
-  ];
+export function CarouselDemo({imgs}: {imgs?: string[]}) {
 
   return (
     <Carousel className="w-full">
       <CarouselContent>
-        {imgs.map((img, index) => (
+        {imgs && imgs.map((img, index) => (
           <CarouselItem className="" key={index}>
             <div className="h-96 rounded-lg overflow-hidden">
               <img src={img} alt="" />
